@@ -1,0 +1,78 @@
+* {
+    box-sizing: border-box; /* Padding och border räknas med i den totala bredden och höjden */
+}
+html,
+body
+ {
+    margin: 0; /* Tar bort webbläsarens standardmarginal */
+    padding: 0; /* Tar bort webbläsarens standard-padding */
+}
+
+/*Här börjar uppgift 1*/
+.uppgift1 
+{
+    width: 100%; /* Gör figuren lika bred som hela sidan */
+    display: flex; /* Använder Flexbox för att placera figuren*/
+    justify-content: center; /* Placerar figuren i centrum vågrätt */
+    align-items: center; /* Placerar figuren i mitten lodrätt */
+}
+
+.blå-rektangel
+ {
+    width: 40vW; /* Gör rektangeln 40% av webbläsarens bredd */
+    aspect-ratio:3/2; /* Gör rektangeln 3 delar bred och 2 delar hög */
+    background-color: #5b9bd5; /* Ger rektangeln sin blåa färg */
+    display: flex; /* Använder Flexbox för innehållet i rektangeln */
+    justify-content: center; /* Centrerar cirkeln vågrätt */
+    align-items: center; /* Centrerar cirkeln lodrätt */
+}
+
+.gul-cirkel
+ {
+    height: 100%; /* Gör cirkeln lika hög som rektangeln*/
+    aspect-ratio: 1/1; /* Gör bredden och höjden lika stora */
+    background-color: #ffc000; /* Ger cirkeln sin gula färg */
+    border-radius: 50%; /* Gör figuren rund som en cirkel */
+}
+
+
+/*Här börjar uppgift 2*/
+.uppgift2
+ {
+    width: 100vw; /* Gör området lika brett som hela webbläsarfönstret */
+    height: 100vh; /* Gör området lika högt som hela webbläsarfönstret */
+}
+.färgade-fält 
+{
+    width: 100%; /* Tar upp hela bredden av området */
+    height: 100%; /* Tar upp hela höjden av området */
+    display: grid; /* Använder CSS Grid för att placera färgfälten */
+    grid-template-columns: 1fr 1fr; /* Skapar två lika stora kolumer */
+    grid-template-rows: 1fr 1fr; /* Skapar två lika stora rader */
+}
+
+.fält
+{
+width: 100%; /* Gör varje fält lika brett som sin grid-plats */
+height: 100%; /* Gör varje fält lika högt som sin grid-plats */
+}
+
+.röd
+{
+    background-color: red; /* Ger fältet sin röda färg*/
+}
+
+.blå
+{
+    background-color: blue; /* Ger fältet sin blåa färg */
+}
+
+.grönt
+{
+    background-color: green; /* Ger fältet sin gröna färg */
+}
+
+.gul-cirkel
+{
+    background-color: yellow; /* Ger fältet sin gula färg */
+}
