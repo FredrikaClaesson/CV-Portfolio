@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Kontaktuppgifter till Fredrica Claesson, webbutvecklingsstudent."
+    >
+
+    <title>Kontakt | Fredrica Claesson</title>
+
+    <link rel="stylesheet" href="cv.css">
+    <script src="cv.js" defer></script>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="header-container">
+
+            <a href="index.html" class="logo">
+                Fredrica Claesson
+            </a>
+
+            <button
+                class="menu-button"
+                type="button"
+                aria-label="Öppna meny"
+                aria-expanded="false"
+                aria-controls="main-navigation"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav id="main-navigation" class="main-navigation" aria-label="Huvudmeny">
+                <ul>
+
+                    <li>
+                        <a href="index.html">
+                            Startsida
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="portfolio.html">
+                            Portfolio
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="kontakt.html" aria-current="page">
+                            Kontakt
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- SIDINTRO -->
+        <section class="page-hero">
+
+            <div class="section-container">
+
+                <p class="section-label">
+                    Hör gärna av dig
+                </p>
+
+                <h1>Kontakt</h1>
+
+                <p>
+                    Jag träffas gärna för att berätta mer om mig själv
+                    och visa varför just jag skulle passa perfekt
+                    in i ert team!
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- KONTAKTUPPGIFTER -->
+        <section id="kontakt" class="section contact-section">
+
+            <div class="section-container contact-layout">
+
+                <div class="contact-information">
+
+                    <h2>
+                        Mina kontaktuppgifter
+                    </h2>
+
+
+                    <address>
+
+                        <div class="contact-item">
+
+                            <h3>Telefon</h3>
+
+                            <a href="tel:+46761254153">
+                                076-125 41 53
+                            </a>
+
+                        </div>
+
+
+                        <div class="contact-item">
+
+                            <h3>E-post</h3>
+
+                            <a href="mailto:fredrica.claesson@gmail.com">
+                                fredrica.claesson@gmail.com
+                            </a>
+
+                        </div>
+
+
+                        <div class="contact-item">
+
+                            <h3>Ort</h3>
+
+                            <p>
+                                Gislaved, Sverige
+                            </p>
+
+                        </div>
+
+
+                        <div class="contact-item">
+
+                            <h3>GitHub</h3>
+
+                            <a
+                                href="https://github.com/FredrikaClaesson"
+                                target="_blank"
+                                rel="noopener"
+                            >
+                                github.com/fredricaclaesson
+                            </a>
+
+                        </div>
+
+                    </address>
+
+                </div>
+
+
+                <!-- KONTAKTFORMULÄR -->
+                <div class="contact-form-wrapper">
+
+                    <h2>
+                        Skicka ett meddelande
+                    </h2>
+
+                    <p>
+                        Funderar du på något? Skicka ett meddelande till 
+                        mig så återkopplar jag inom 24h. Vi hörs! 
+                        <span class="ur-funktion">UR FUNKTION!</span>
+                    </p>
+
+
+                    <form id="contact-form">
+
+                        <div class="form-group">
+
+                            <label for="name">
+                                Namn
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                autocomplete="name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                E-post
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                autocomplete="email"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="subject">
+                                Ämne
+                            </label>
+
+                            <input
+                                type="text"
+                                id="subject"
+                                name="subject"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="message">
+                                Meddelande
+                            </label>
+
+                            <textarea
+                                id="message"
+                                name="message"
+                                rows="6"
+                                required
+                            ></textarea>
+
+                        </div>
+
+
+                        <button type="submit" class="button">
+                            Skicka meddelande
+                        </button>
+
+                        <p
+                            id="form-message"
+                            class="form-message"
+                            aria-live="polite"
+                        ></p>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- AVSLUTNING -->
+        <section class="section contact-cta">
+
+            <div class="section-container">
+
+                <h2>
+                    Ska vi skapa något tillsammans?
+                </h2>
+
+                <p>
+                    Jag är nyfiken, kreativ och motiverad till att fortsätta
+                    utvecklas inom webbutveckling. Hör gärna av dig om
+                    du vill veta mer om mig och mina projekt.
+                </p>
+
+                <a
+                    href="#kontakt" class="button">
+                    Mejla mig
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+            <p>
+                &copy; 2026 Fredrica Claesson
+            </p>
+
+            <nav aria-label="Sidfotsmeny">
+                <a href="index.html">CV</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="kontakt.html">Kontakt</a>
+            </nav>
+
+        </div>
+
+    </footer>
+
+</body>
+</html>

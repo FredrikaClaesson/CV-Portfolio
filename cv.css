@@ -1,0 +1,1264 @@
+/* =========================================================
+   FREDRICA CLAESSON - CV & PORTFOLIO
+   Mobile First
+   ========================================================= */
+
+
+/* =========================
+   1. GRUNDINSTÄLLNINGAR
+   ========================= */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #171717;
+    background-color: #fff8fc;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+
+/* =========================
+   2. FÄRGER & GENERELLA KLASSER
+   ========================= */
+
+:root {
+    --pink-light: #fbe3f1;
+    --pink-soft: #f7bfdc;
+    --pink: #ef71b3;
+    --pink-strong: #e92f97;
+    --pink-dark: #c91f7d;
+
+    --white: #ffffff;
+    --black: #111111;
+    --text: #2b2b2b;
+    --muted: #666666;
+
+    --border: #e8bfd4;
+
+    --shadow:
+        0 10px 30px rgba(182, 45, 116, 0.12);
+
+    --radius-small: 14px;
+    --radius-medium: 24px;
+    --radius-large: 40px;
+
+    --max-width: 1180px;
+}
+
+
+/* =========================
+   3. TYPOGRAFI
+   ========================= */
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--black);
+}
+
+h1 {
+    font-size: clamp(2.8rem, 11vw, 5rem);
+    line-height: 0.95;
+    font-weight: 500;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-size: clamp(2rem, 7vw, 3.2rem);
+    line-height: 1.05;
+    margin-bottom: 1.2rem;
+}
+
+h3 {
+    font-size: 1.3rem;
+    line-height: 1.3;
+    margin-bottom: 0.4rem;
+}
+
+h4 {
+    font-size: 1.05rem;
+    margin-bottom: 0.25rem;
+}
+
+p {
+    font-size: 1rem;
+    color: var(--text);
+}
+
+strong {
+    font-weight: 700;
+}
+
+/* Text för ur funktion */
+.ur-funktion {
+    color: red;
+    font-weight: bold;
+}
+
+/* =========================
+   4. GEMENSAM LAYOUT
+   ========================= */
+
+.section {
+    position: relative;
+    padding: 4.5rem 1.25rem;
+    overflow: hidden;
+}
+
+.section-container,
+.header-container,
+.footer-container {
+    width: min(100%, var(--max-width));
+    margin: 0 auto;
+}
+
+.section-label {
+    margin-bottom: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--pink-dark);
+}
+
+
+/* =========================
+   5. HEADER
+   ========================= */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(255, 248, 252, 0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201, 31, 125, 0.08);
+}
+
+.header-container {
+    min-height: 74px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0 1.25rem;
+}
+
+.logo {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+
+/* =========================
+   6. MOBILMENY
+   ========================= */
+
+.menu-button {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+
+    padding: 10px;
+
+    border: 0;
+    border-radius: 50%;
+
+    background-color: var(--pink-soft);
+    cursor: pointer;
+}
+
+.menu-button span {
+    display: block;
+    width: 100%;
+    height: 2px;
+
+    background-color: var(--black);
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+.menu-button.is-active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-button.is-active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-button.is-active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* =========================
+   7. NAVIGATION
+   ========================= */
+
+.main-navigation {
+    position: absolute;
+
+    top: 74px;
+    left: 0;
+
+    width: 100%;
+
+    background-color: var(--white);
+
+    max-height: 0;
+    overflow: hidden;
+
+    transition: max-height 0.35s ease;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.main-navigation.is-open {
+    max-height: 320px;
+}
+
+.main-navigation ul {
+    list-style: none;
+    padding: 1rem 1.25rem 1.5rem;
+}
+
+.main-navigation li + li {
+    margin-top: 0.35rem;
+}
+
+.main-navigation a {
+    display: block;
+
+    padding: 0.9rem 1rem;
+
+    border-radius: 12px;
+
+    font-weight: 600;
+}
+
+.main-navigation a:hover,
+.main-navigation a:focus-visible {
+    background-color: var(--pink-light);
+}
+
+.main-navigation a[aria-current="page"] {
+    color: var(--pink-dark);
+    background-color: var(--pink-light);
+}
+
+
+/* =========================
+   8. HERO / STARTSIDA
+   ========================= */
+
+.hero {
+    position: relative;
+
+    display: grid;
+    gap: 2rem;
+
+    padding: 2rem 1.25rem 4.5rem;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 5% 15%,
+            rgba(240, 104, 177, 0.26) 0,
+            rgba(240, 104, 177, 0.26) 27%,
+            transparent 27%
+        ),
+        radial-gradient(
+            circle at 92% 90%,
+            rgba(244, 177, 216, 0.52) 0,
+            rgba(244, 177, 216, 0.52) 28%,
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #fbe6f2 0%,
+            #fff9fc 100%
+        );
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 240px;
+    height: 240px;
+
+    top: -140px;
+    right: -70px;
+
+    border: 5px solid var(--pink-strong);
+    border-radius: 45% 55% 61% 39% / 40% 44% 56% 60%;
+
+    transform: rotate(20deg);
+
+    opacity: 0.9;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 200px;
+    height: 260px;
+
+    left: -130px;
+    bottom: 2rem;
+
+    border: 5px solid var(--pink-strong);
+    border-radius: 60% 40% 55% 45% / 42% 62% 38% 58%;
+
+    transform: rotate(-30deg);
+}
+
+.hero-image-wrapper,
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-image-wrapper {
+    width: min(100%, 430px);
+    margin: 0 auto;
+}
+
+.hero-image-wrapper::before {
+    content: "";
+
+    position: absolute;
+
+    inset: -12px;
+
+    z-index: -1;
+
+    background-color: var(--pink-soft);
+
+    border-radius: 45% 55% 58% 42% / 55% 44% 56% 45%;
+
+    transform: rotate(-4deg);
+}
+
+.hero-image {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+
+    border-radius: 48% 52% 60% 40% / 55% 45% 55% 45%;
+
+    box-shadow: var(--shadow);
+}
+
+.hero-content {
+    width: min(100%, 680px);
+}
+
+.hero-subtitle {
+    margin-bottom: 0.5rem;
+
+    font-size: 0.95rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.hero-content h1 {
+    margin-bottom: 2.5rem;
+}
+
+.hero-content h2 {
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    max-width: 620px;
+}
+
+
+/* =========================
+   9. KNAPPAR
+   ========================= */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 48px;
+
+    margin-top: 1rem;
+    padding: 0.8rem 1.4rem;
+
+    border: 2px solid var(--pink-dark);
+    border-radius: 999px;
+
+    background-color: var(--pink-dark);
+    color: var(--white);
+
+    font-weight: 700;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.button:hover,
+.button:focus-visible {
+    background-color: transparent;
+    color: var(--pink-dark);
+
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow);
+}
+
+
+/* =========================
+   10. UTBILDNING
+   ========================= */
+
+.education-section {
+    background-color: var(--white);
+}
+
+.education-list {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.education-card {
+    padding: 1.5rem;
+
+    border-radius: var(--radius-medium);
+
+    background-color: var(--pink-light);
+
+    box-shadow: var(--shadow);
+}
+
+.education-card p {
+    margin-bottom: 0.3rem;
+}
+
+.education-card p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================
+   11. ERFARENHET
+   ========================= */
+
+.experience-section {
+    background-color: var(--pink-light);
+}
+
+.experience-section::after {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    right: -150px;
+    bottom: -110px;
+
+    border: 5px solid var(--pink-strong);
+    border-radius: 50% 40% 58% 42% / 48% 55% 45% 52%;
+}
+
+.experience-card {
+    position: relative;
+    z-index: 1;
+
+    padding: 1.6rem;
+
+    border-radius: var(--radius-medium);
+
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.experience-date {
+    font-weight: 700;
+    color: var(--pink-dark);
+}
+
+.reference {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+
+    border-top: 1px solid var(--border);
+}
+
+.reference p {
+    margin-bottom: 0.2rem;
+}
+
+.reference a {
+    font-weight: 700;
+    color: var(--pink-dark);
+}
+
+
+/* =========================
+   12. KUNSKAPER
+   ========================= */
+
+.skills-section {
+    background-color: var(--white);
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+
+    list-style: none;
+
+    margin-top: 1.5rem;
+}
+
+.skills-list li {
+    padding: 0.7rem 1rem;
+
+    border: 2px solid var(--pink-strong);
+    border-radius: 999px;
+
+    background-color: var(--white);
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   13. ROLIG FAKTA
+   ========================= */
+
+.facts-section {
+    background:
+        radial-gradient(
+            circle at 88% 55%,
+            rgba(245, 172, 214, 0.66) 0,
+            rgba(245, 172, 214, 0.66) 37%,
+            transparent 37%
+        ),
+        var(--pink-light);
+}
+
+.facts-list {
+    position: relative;
+    z-index: 2;
+
+    max-width: 800px;
+
+    padding-left: 1.4rem;
+}
+
+.facts-list li {
+    margin-bottom: 1rem;
+    padding-left: 0.3rem;
+}
+
+.facts-list li::marker {
+    color: var(--pink-dark);
+}
+
+
+/* =========================
+   14. PORTFOLIO PREVIEW
+   ========================= */
+
+.portfolio-preview {
+    text-align: center;
+
+    background-color: var(--white);
+}
+
+.portfolio-preview .section-container {
+    max-width: 800px;
+}
+
+.portfolio-preview p {
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================
+   15. SIDHERO
+   ========================= */
+
+.page-hero {
+    position: relative;
+
+    padding: 4rem 1.25rem;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(238, 104, 179, 0.3) 0,
+            rgba(238, 104, 179, 0.3) 28%,
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #f9d9eb,
+            #fff9fc
+        );
+}
+
+.page-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 230px;
+    height: 280px;
+
+    right: -125px;
+    top: -50px;
+
+    border: 5px solid var(--pink-strong);
+
+    border-radius:
+        57% 43% 62% 38% /
+        42% 62% 38% 58%;
+
+    transform: rotate(25deg);
+}
+
+.page-hero .section-container {
+    position: relative;
+    z-index: 1;
+}
+
+.page-hero h1 {
+    margin-bottom: 1.5rem;
+}
+
+.page-hero p {
+    max-width: 700px;
+}
+
+
+/* =========================
+   16. PORTFOLIO - PROJEKT
+   ========================= */
+
+.projects-section {
+    background-color: var(--pink-light);
+}
+
+.section-heading {
+    margin-bottom: 2rem;
+}
+
+.projects-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.project-card {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: var(--radius-medium);
+
+    background-color: var(--white);
+
+    box-shadow: var(--shadow);
+}
+
+.project-number {
+    padding: 1.2rem 1.4rem;
+
+    background-color: var(--pink-soft);
+
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.project-content {
+    padding: 1.5rem;
+}
+
+.project-category {
+    margin-bottom: 0.5rem;
+
+    color: var(--pink-dark);
+
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+
+    margin-top: 1.25rem;
+}
+
+.project-links a {
+    display: inline-block;
+
+    padding: 0.65rem 1rem;
+
+    border: 2px solid var(--pink-dark);
+    border-radius: 999px;
+
+    color: var(--pink-dark);
+
+    font-weight: 700;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.project-links a:hover,
+.project-links a:focus-visible {
+    background-color: var(--pink-dark);
+    color: var(--white);
+}
+
+
+/* =========================
+   17. GITHUB-SEKTION
+   ========================= */
+
+.github-section {
+    text-align: center;
+
+    background-color: var(--white);
+}
+
+.github-section .section-container {
+    max-width: 760px;
+}
+
+
+/* =========================
+   18. KONTAKTSIDA
+   ========================= */
+
+.contact-section {
+    background-color: var(--white);
+}
+
+.contact-layout {
+    display: grid;
+    gap: 2rem;
+}
+
+.contact-information,
+.contact-form-wrapper {
+    padding: 1.6rem;
+
+    border-radius: var(--radius-medium);
+
+    box-shadow: var(--shadow);
+}
+
+.contact-information {
+    background-color: var(--pink-light);
+}
+
+.contact-form-wrapper {
+    background-color: var(--white);
+
+    border: 1px solid var(--border);
+}
+
+address {
+    font-style: normal;
+}
+
+.contact-item {
+    margin-bottom: 1.5rem;
+}
+
+.contact-item:last-child {
+    margin-bottom: 0;
+}
+
+.contact-item h3 {
+    margin-bottom: 0.15rem;
+}
+
+.contact-item p,
+.contact-item a {
+    color: var(--text);
+}
+
+.contact-item a {
+    word-break: break-word;
+    font-weight: 600;
+}
+
+.contact-item a:hover,
+.contact-item a:focus-visible {
+    color: var(--pink-dark);
+}
+
+
+/* =========================
+   19. FORMULÄR
+   ========================= */
+
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 0.4rem;
+
+    font-size: 0.95rem;
+    font-weight: 700;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+
+    padding: 0.85rem 1rem;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-small);
+
+    background-color: #fffafd;
+
+    color: var(--text);
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--pink-dark);
+
+    box-shadow:
+        0 0 0 4px rgba(201, 31, 125, 0.12);
+}
+
+.form-message {
+    margin-top: 1rem;
+
+    font-weight: 700;
+    color: var(--pink-dark);
+}
+
+
+/* =========================
+   20. KONTAKT CTA
+   ========================= */
+
+.contact-cta {
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 15% 70%,
+            rgba(240, 100, 177, 0.22) 0,
+            rgba(240, 100, 177, 0.22) 24%,
+            transparent 24%
+        ),
+        var(--pink-light);
+}
+
+.contact-cta .section-container {
+    max-width: 760px;
+}
+
+
+/* =========================
+   21. FOOTER
+   ========================= */
+
+.site-footer {
+    padding: 2rem 1.25rem;
+
+    background-color: var(--black);
+    color: var(--white);
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.site-footer p {
+    margin: 0;
+    color: var(--white);
+}
+
+.site-footer nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.site-footer a {
+    color: var(--white);
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+    color: var(--pink-soft);
+}
+
+
+/* =========================
+   22. TILLGÄNGLIGHET
+   ========================= */
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--pink-dark);
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (min-width: 700px) {
+
+    .section {
+        padding:
+            5.5rem
+            2rem;
+    }
+
+    .header-container {
+        padding:
+            0
+            2rem;
+    }
+
+    .hero {
+        padding:
+            3.5rem
+            2rem
+            5.5rem;
+    }
+
+    .page-hero {
+        padding:
+            5rem
+            2rem;
+    }
+
+
+    /* UTBILDNING */
+
+    .education-list {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    /* PROJEKT */
+
+    .projects-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .project-card:nth-child(3) {
+        grid-column:
+            1 / -1;
+    }
+
+
+    /* KONTAKT */
+
+    .contact-information,
+    .contact-form-wrapper {
+        padding: 2rem;
+    }
+
+
+    /* FOOTER */
+
+    .footer-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 950px) {
+
+    /* HEADER */
+
+    .site-header {
+        position: sticky;
+    }
+
+    .header-container {
+        min-height: 82px;
+    }
+
+    .menu-button {
+        display: none;
+    }
+
+    .main-navigation {
+        position: static;
+
+        width: auto;
+        max-height: none;
+
+        overflow: visible;
+
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    .main-navigation ul {
+        display: flex;
+        align-items: center;
+        gap: 0.35rem;
+
+        padding: 0;
+    }
+
+    .main-navigation li + li {
+        margin-top: 0;
+    }
+
+    .main-navigation a {
+        padding:
+            0.65rem
+            0.95rem;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: calc(100vh - 82px);
+
+        grid-template-columns:
+            minmax(360px, 0.9fr)
+            minmax(420px, 1.1fr);
+
+        align-items: center;
+
+        gap: 5rem;
+
+        padding:
+            5rem
+            max(2rem, calc((100vw - var(--max-width)) / 2));
+    }
+
+    .hero-image-wrapper {
+        width: 100%;
+    }
+
+    .hero-image {
+        aspect-ratio: 0.84;
+    }
+
+    .hero-content {
+        max-width: 630px;
+    }
+
+    .hero-content h1 {
+        font-size:
+            clamp(
+                4rem,
+                7vw,
+                7.2rem
+            );
+
+        margin-bottom: 3rem;
+    }
+
+    .hero-content h2 {
+        font-size: 3rem;
+    }
+
+
+    /* ERFARENHET */
+
+    .experience-card {
+        max-width: 850px;
+
+        padding: 2.2rem;
+    }
+
+
+    /* FAKTA */
+
+    .facts-section .section-container {
+        display: grid;
+
+        grid-template-columns:
+            0.8fr
+            1.2fr;
+
+        gap: 4rem;
+
+        align-items: start;
+    }
+
+    .facts-section h2 {
+        max-width: 350px;
+    }
+
+
+    /* PROJEKT */
+
+    .projects-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .project-card:nth-child(3) {
+        grid-column: auto;
+    }
+
+
+    /* KONTAKT */
+
+    .contact-layout {
+        grid-template-columns:
+            0.85fr
+            1.15fr;
+
+        align-items: start;
+
+        gap: 3rem;
+    }
+
+    .contact-information,
+    .contact-form-wrapper {
+        padding: 2.5rem;
+    }
+}
+
+
+/* =========================================================
+   STÖRRE SKÄRMAR
+   ========================================================= */
+
+@media (min-width: 1200px) {
+
+    .section {
+        padding-top: 7rem;
+        padding-bottom: 7rem;
+    }
+
+    .hero {
+        gap: 6rem;
+    }
+
+    .education-card {
+        padding: 2rem;
+    }
+
+    .project-content {
+        padding: 2rem;
+    }
+}
+
+
+/* =========================================================
+   MINSKADE ANIMATIONER
+   För användare som valt reduced motion
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
