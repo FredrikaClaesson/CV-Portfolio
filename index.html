@@ -1,36 +1,36 @@
-<!DOCTYPE html>
-<html lang="sv">
+<!DOCTYPE html> <!-- Talar om för webbläsaren att dokumentet använder HTML5 -->
+<html lang="sv"> <!-- Talar om för webbläsaren att sidans huvudspråk är svenska -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Fredrica Claesson | CV">
+    <meta charset="UTF-8"> <!-- Gör att svenska tecken som å, ä och ö visas korrekt -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Gör sidan responsiv och anpassad för exempelvis mobil och surfplatta -->
+    <meta name="description" content="Fredrica Claesson | CV"> <!-- Kort beskrivning, bra för sökmotorer! -->
     <title>Fredrica Claesson | CV</title>
-    <link rel ="stylesheet" href="cv.css">
-    <script src="cv.js" defer></script>
+    <link rel ="stylesheet" href="cv.css"> <!-- Kopplar min CSS-fil som styr sidans design -->
+    <script src="cv.js" defer></script> <!-- Kopplar min JavaScript-fil. Defer gör att JavaScripten körs efter att HTML-koden har lästs in -->
 </head>
 
-<body>
+<body> <!-- Här börjar det innehåll som visas på min webbsida -->
     <header class="site-header">
         <div class="header-container">
-            <a href="index.html" class="logo">Fredrica Claesson</a>
+            <a href="index.html" class="logo">Fredrica Claesson</a> <!-- Klickbar text som leder en tillbaka till startsidan -->
             <button
             class="menu-button"
             type="button"
             aria-label="Öppna meny"
             aria-expanded="false"
             aria-controls="main-navigation"
-            >
+            > <!-- Knapp för mobilmenyn. aria-label beskriver knappen för skärmläsare. aria-expanded visar om menyn är öppen eller stängd. aria-controls kopplar knappen till navigationen nedanför -->
+            <span></span> <!-- Skapar hamburgermeny -->
             <span></span>
-            <span></span>
-            <span></span>
+            <span></span> 
             </button>
-            <nav id="main-navigation" class="main-navigation" aria-label="Huvudmeny">
+            <nav id="main-navigation" class="main-navigation" aria-label="Huvudmeny"> 
                 <ul>
                     <li>
                         <a href="index.html" aria-current="page">CV</a>
                     </li>
                     <li>
-                        <a href="portfolio.html">Portfolio</a>
+                        <a href="portfolio.html">Portfolio</a> 
                     </li>
                     <li>
                         <a href="kontakt.html">Kontakt</a>
@@ -42,13 +42,13 @@
     <main>
         
         <!--HERO / INTRODUKTION-->
-        <section class="hero">
-            <div class="hero-image-wrapper">
+        <section class="hero"> <!-- Hero-sektionen är den första presentationen av mig -->
+            <div class="hero-image-wrapper"> <!-- Wrapper runt profilbilden för enklare positionering med CSS -->
                 <img
-                src="bild1.jpg"
+                src="bild1.jpg" 
                 alt="Porträttbild på Fredrica Claesson"
                 class="hero-image"
-                >
+                > 
             </div>
             <div class="hero-content">
                 <p
