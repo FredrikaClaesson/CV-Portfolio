@@ -105,7 +105,7 @@ document.addEventListener("keydown", function (event) {
             // Återställer menyknappen
             menuButton.classList.remove("is-active");
 
-            // Uppdaterar tillgänglighetsattribut
+            // Uppdaterar tillgänglighet
             menuButton.setAttribute("aria-expanded", "false");
             menuButton.setAttribute("aria-label", "Öppna meny");
 
