@@ -7,17 +7,17 @@
 /* =========================
    1. GRUNDINSTÄLLNINGAR
    ========================= */
-
+/* Grundinställningar för hela sidan */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
-
+/* Gör scrollningen mjuk */
 html {
     scroll-behavior: smooth;
 }
-
+/* Sidans grundutseende */
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -25,22 +25,22 @@ body {
     background-color: #fff8fc;
     line-height: 1.6;
 }
-
+/* Gör bilder responsiva */
 img {
     display: block;
     max-width: 100%;
 }
-
+/* Tar bort standardutseendet på länkar */
 a {
     color: inherit;
     text-decoration: none;
 }
-
+/* Tar bort standardmarginaler från listor */
 ul {
     margin: 0;
     padding: 0;
 }
-
+/* Formulärelement använder samma typsnitt som sidan */
 button,
 input,
 textarea {
@@ -51,7 +51,7 @@ textarea {
 /* =========================
    2. FÄRGER & GENERELLA KLASSER
    ========================= */
-
+/* Variabler för färger och storlekar som används flera gånger */
 :root {
     --pink-light: #fbe3f1;
     --pink-soft: #f7bfdc;
@@ -65,14 +65,14 @@ textarea {
     --muted: #666666;
 
     --border: #e8bfd4;
-
+    /* Skugga som används på olika kort */
     --shadow:
         0 10px 30px rgba(182, 45, 116, 0.12);
-
+/* Rundade hörn */
     --radius-small: 14px;
     --radius-medium: 24px;
     --radius-large: 40px;
-
+/* Sidans maximala bredd */
     --max-width: 1180px;
 }
 
@@ -80,7 +80,7 @@ textarea {
 /* =========================
    3. TYPOGRAFI
    ========================= */
-
+/* Tar bort standardmarginal ovanför text */
 h1,
 h2,
 h3,
@@ -88,14 +88,14 @@ h4,
 p {
     margin-top: 0;
 }
-
+/* Samma färg på alla rubriker */
 h1,
 h2,
 h3,
 h4 {
     color: var(--black);
 }
-
+/* Sidans största rubrik */
 h1 {
     font-size: clamp(2.8rem, 11vw, 5rem);
     line-height: 0.95;
@@ -103,13 +103,13 @@ h1 {
     letter-spacing: -0.05em;
     text-transform: uppercase;
 }
-
+/* Huvudrubriker för sektioner */
 h2 {
     font-size: clamp(2rem, 7vw, 3.2rem);
     line-height: 1.05;
     margin-bottom: 1.2rem;
 }
-
+/* Mindre rubriker */
 h3 {
     font-size: 1.3rem;
     line-height: 1.3;
@@ -121,11 +121,12 @@ h4 {
     margin-bottom: 0.25rem;
 }
 
+/* Vanlig brödtext */
 p {
     font-size: 1rem;
     color: var(--text);
 }
-
+/* Gör text i strong fet */
 strong {
     font-weight: 700;
 }
@@ -139,20 +140,20 @@ strong {
 /* =========================
    4. GEMENSAM LAYOUT
    ========================= */
-
+/* Grundinställningar för sidans sektioner */
 .section {
     position: relative;
     padding: 4.5rem 1.25rem;
     overflow: hidden;
 }
-
+/* Centrerar innehållet och begränsar bredden */
 .section-container,
 .header-container,
 .footer-container {
     width: min(100%, var(--max-width));
     margin: 0 auto;
 }
-
+/* Liten etikett ovanför vissa rubriker */
 .section-label {
     margin-bottom: 0.5rem;
     font-size: 0.85rem;
@@ -166,16 +167,16 @@ strong {
 /* =========================
    5. HEADER
    ========================= */
-
+/* Sidans översta meny */
 .site-header {
     position: sticky;
     top: 0;
-    z-index: 1000;
+   z-index: 1000; /* Gör att headern ligger ovanför annat innehåll */
     background-color: rgba(255, 248, 252, 0.96);
-    backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px); /* Ger en suddig effekt bakom headern */
     border-bottom: 1px solid rgba(201, 31, 125, 0.08);
 }
-
+/* Placerar loggan och menyknappen bredvid varandra */
 .header-container {
     min-height: 74px;
     display: flex;
@@ -184,7 +185,7 @@ strong {
     gap: 1rem;
     padding: 0 1.25rem;
 }
-
+/* Utseende på namnet (loggan) */
 .logo {
     font-size: 1rem;
     font-weight: 700;
@@ -196,11 +197,11 @@ strong {
 /* =========================
    6. MOBILMENY
    ========================= */
-
+/* Knappen som öppnar mobilmenyn */
 .menu-button {
     width: 46px;
     height: 46px;
-
+/* Flexbox placerar strecken i hamburgermenyn */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -212,29 +213,29 @@ strong {
     border-radius: 50%;
 
     background-color: var(--pink-soft);
-    cursor: pointer;
+   cursor: pointer; /* Visar en hand när man håller musen över knappen */
 }
-
+/* De tre strecken i hamburgermenyn */
 .menu-button span {
     display: block;
     width: 100%;
     height: 2px;
 
     background-color: var(--black);
-
+/* Gör förändringen mjuk när menyn öppnas */
     transition:
         transform 0.3s ease,
         opacity 0.3s ease;
 }
-
+/* Första strecket roteras när menyn är öppen */
 .menu-button.is-active span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
 }
-
+/* Mittenstrecket försvinner när menyn är öppen */
 .menu-button.is-active span:nth-child(2) {
     opacity: 0;
 }
-
+/* Sista strecket roteras åt andra hållet */
 .menu-button.is-active span:nth-child(3) {
     transform: translateY(-7px) rotate(-45deg);
 }
@@ -243,7 +244,7 @@ strong {
 /* =========================
    7. NAVIGATION
    ========================= */
-
+/* Navigationen är stängd från början på mobil */
 .main-navigation {
     position: absolute;
 
@@ -253,28 +254,28 @@ strong {
     width: 100%;
 
     background-color: var(--white);
-
+/* max-height 0 gömmer menyn */
     max-height: 0;
     overflow: hidden;
-
+/* Ger en mjuk öppning och stängning */
     transition: max-height 0.35s ease;
 
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
-
+/* När JavaScript lägger till klassen is-open visas menyn */
 .main-navigation.is-open {
     max-height: 320px;
 }
-
+/* Tar bort listpunkter och ger luft runt menyn */
 .main-navigation ul {
     list-style: none;
     padding: 1rem 1.25rem 1.5rem;
 }
-
+/* Lägger mellanrum mellan menyvalen */
 .main-navigation li + li {
     margin-top: 0.35rem;
 }
-
+/* Gör hela området runt texten klickbart */
 .main-navigation a {
     display: block;
 
@@ -284,12 +285,12 @@ strong {
 
     font-weight: 600;
 }
-
+/* Ändrar bakgrund när länken får fokus eller muspekaren är över */
 .main-navigation a:hover,
 .main-navigation a:focus-visible {
     background-color: var(--pink-light);
 }
-
+/* Markerar vilken sida användaren befinner sig på */
 .main-navigation a[aria-current="page"] {
     color: var(--pink-dark);
     background-color: var(--pink-light);
@@ -299,17 +300,17 @@ strong {
 /* =========================
    8. HERO / STARTSIDA
    ========================= */
-
+/* Den stora introduktionsdelen högst upp på startsidan */
 .hero {
     position: relative;
-
+/* Grid används för att placera innehållet */
     display: grid;
     gap: 2rem;
 
     padding: 2rem 1.25rem 4.5rem;
 
     overflow: hidden;
-
+/* Flera gradients skapar den rosa bakgrunden */
     background:
         radial-gradient(
             circle at 5% 15%,
@@ -329,7 +330,7 @@ strong {
             #fff9fc 100%
         );
 }
-
+/* Skapar en dekorativ form utan extra HTML */
 .hero::before {
     content: "";
 
@@ -348,7 +349,7 @@ strong {
 
     opacity: 0.9;
 }
-
+/* Skapar ytterligare en dekorativ form */
 .hero::after {
     content: "";
 
@@ -365,18 +366,18 @@ strong {
 
     transform: rotate(-30deg);
 }
-
+/* Gör att bild och text hamnar ovanför dekorationerna */
 .hero-image-wrapper,
 .hero-content {
     position: relative;
     z-index: 2;
 }
-
+/* Behållare runt profilbilden */
 .hero-image-wrapper {
     width: min(100%, 430px);
     margin: 0 auto;
 }
-
+/* Rosa dekorativ form bakom profilbilden */
 .hero-image-wrapper::before {
     content: "";
 
@@ -384,7 +385,7 @@ strong {
 
     inset: -12px;
 
-    z-index: -1;
+    z-index: -1; /* Negativt z-index placerar formen bakom bilden */
 
     background-color: var(--pink-soft);
 
@@ -392,22 +393,22 @@ strong {
 
     transform: rotate(-4deg);
 }
-
+/* Profilbildens utseende */
 .hero-image {
     width: 100%;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 4 / 5; /* Bestämmer bildens proportioner */
 
-    object-fit: cover;
+    object-fit: cover; /* Bilden fyller området utan att bli utdragen */
 
     border-radius: 48% 52% 60% 40% / 55% 45% 55% 45%;
 
     box-shadow: var(--shadow);
 }
-
+/* Begränsar bredden på texten */
 .hero-content {
     width: min(100%, 680px);
 }
-
+/* Den lilla texten ovanför namnet */
 .hero-subtitle {
     margin-bottom: 0.5rem;
 
@@ -415,15 +416,15 @@ strong {
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
-
+/* Luft under huvudrubriken */
 .hero-content h1 {
     margin-bottom: 2.5rem;
 }
-
+/* Luft under Hej-rubriken */
 .hero-content h2 {
     margin-bottom: 1rem;
 }
-
+/* Gör att textstycken inte blir för breda */
 .hero-content p {
     max-width: 620px;
 }
@@ -432,7 +433,7 @@ strong {
 /* =========================
    9. KNAPPAR
    ========================= */
-
+/* Grundutseende för knappar/länkar med klassen button */
 .button {
     display: inline-flex;
     align-items: center;
@@ -444,20 +445,20 @@ strong {
     padding: 0.8rem 1.4rem;
 
     border: 2px solid var(--pink-dark);
-    border-radius: 999px;
+    border-radius: 999px; /* Ett stort värde gör knappen helt rundad */
 
     background-color: var(--pink-dark);
     color: var(--white);
 
     font-weight: 700;
-
+/* Gör hover-effekterna mjuka */
     transition:
         background-color 0.25s ease,
         color 0.25s ease,
         transform 0.25s ease,
         box-shadow 0.25s ease;
 }
-
+/* Effekt när användaren håller musen över knappen */
 .button:hover,
 .button:focus-visible {
     background-color: transparent;
@@ -472,16 +473,16 @@ strong {
 /* =========================
    10. UTBILDNING
    ========================= */
-
+/* Vit bakgrund på utbildningssektionen */
 .education-section {
     background-color: var(--white);
 }
-
+/* Grid för utbildningskorten */
 .education-list {
     display: grid;
     gap: 1.25rem;
 }
-
+/* Utseende på varje utbildningbox */
 .education-card {
     padding: 1.5rem;
 
@@ -491,11 +492,11 @@ strong {
 
     box-shadow: var(--shadow);
 }
-
+/* Mindre mellanrum mellan textstycken i kortet */
 .education-card p {
     margin-bottom: 0.3rem;
 }
-
+/* Tar bort mellanrummet under sista textstycket */
 .education-card p:last-child {
     margin-bottom: 0;
 }
@@ -504,11 +505,11 @@ strong {
 /* =========================
    11. ERFARENHET
    ========================= */
-
+/* Rosa bakgrund på erfarenhetssektionen */
 .experience-section {
     background-color: var(--pink-light);
 }
-
+/* Dekorativ form i sektionen */
 .experience-section::after {
     content: "";
 
@@ -523,34 +524,34 @@ strong {
     border: 5px solid var(--pink-strong);
     border-radius: 50% 40% 58% 42% / 48% 55% 45% 52%;
 }
-
+/* Box som innehåller arbetslivserfarenheten */
 .experience-card {
     position: relative;
-    z-index: 1;
+    z-index: 1; /* Ser till att boxen ligger framför dekorationen */
 
     padding: 1.6rem;
 
     border-radius: var(--radius-medium);
 
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.7); /* Halvgenomskinlig vit bakgrund */
 }
-
+/* Färg och stil på datumet */
 .experience-date {
     font-weight: 700;
     color: var(--pink-dark);
 }
-
+/* Referensdelen längst ner i boxen */
 .reference {
     margin-top: 1.5rem;
     padding-top: 1rem;
 
     border-top: 1px solid var(--border);
 }
-
+/* Minskar avståndet mellan referenstexterna */
 .reference p {
     margin-bottom: 0.2rem;
 }
-
+/* Gör länkar i referensdelen tydligare */
 .reference a {
     font-weight: 700;
     color: var(--pink-dark);
@@ -560,21 +561,21 @@ strong {
 /* =========================
    12. KUNSKAPER
    ========================= */
-
+/* Vit bakgrund */
 .skills-section {
     background-color: var(--white);
 }
-
+/* Placerar kunskaperna bredvid varandra */
 .skills-list {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Flyttar ner innehåll på ny rad om det inte får plats */
     gap: 0.75rem;
 
     list-style: none;
 
     margin-top: 1.5rem;
 }
-
+/* Varje kunskap visas som en liten rundad etikett */
 .skills-list li {
     padding: 0.7rem 1rem;
 
@@ -590,7 +591,7 @@ strong {
 /* =========================
    13. ROLIG FAKTA
    ========================= */
-
+/* Bakgrund med rosa dekorativ cirkel */
 .facts-section {
     background:
         radial-gradient(
@@ -601,7 +602,7 @@ strong {
         ),
         var(--pink-light);
 }
-
+/* Inställningar för listan med fakta */
 .facts-list {
     position: relative;
     z-index: 2;
@@ -610,12 +611,12 @@ strong {
 
     padding-left: 1.4rem;
 }
-
+/* Skapar mellanrum mellan listpunkterna */
 .facts-list li {
     margin-bottom: 1rem;
     padding-left: 0.3rem;
 }
-
+/* Ändrar färgen på listpunkterna */
 .facts-list li::marker {
     color: var(--pink-dark);
 }
@@ -624,17 +625,17 @@ strong {
 /* =========================
    14. PORTFOLIO PREVIEW
    ========================= */
-
+/* Förhandsvisningen av portfolion centreras */
 .portfolio-preview {
     text-align: center;
 
     background-color: var(--white);
 }
-
+/* Begränsar hur brett innehållet får vara */
 .portfolio-preview .section-container {
     max-width: 800px;
 }
-
+/* Centrerar och begränsar texten */
 .portfolio-preview p {
     max-width: 650px;
     margin-left: auto;
@@ -645,14 +646,14 @@ strong {
 /* =========================
    15. SIDHERO
    ========================= */
-
+/* Hero-del som används på undersidor */
 .page-hero {
     position: relative;
 
     padding: 4rem 1.25rem;
 
     overflow: hidden;
-
+/* Skapar den rosa bakgrunden */
     background:
         radial-gradient(
             circle at 90% 20%,
@@ -666,7 +667,7 @@ strong {
             #fff9fc
         );
 }
-
+/* Dekorativ form i sidheron */
 .page-hero::after {
     content: "";
 
@@ -686,16 +687,16 @@ strong {
 
     transform: rotate(25deg);
 }
-
+/* Placerar texten ovanför dekorationen */
 .page-hero .section-container {
     position: relative;
     z-index: 1;
 }
-
+/* Luft under sidans huvudrubrik */
 .page-hero h1 {
     margin-bottom: 1.5rem;
 }
-
+/* Gör texten lättare att läsa genom att begränsa bredden */
 .page-hero p {
     max-width: 700px;
 }
@@ -704,24 +705,24 @@ strong {
 /* =========================
    16. PORTFOLIO - PROJEKT
    ========================= */
-
+/* Bakgrund för projektsektionen */
 .projects-section {
     background-color: var(--pink-light);
 }
-
+/* Luft under sektionens rubrik */
 .section-heading {
     margin-bottom: 2rem;
 }
-
+/* Grid som håller projektkorten */
 .projects-grid {
     display: grid;
     gap: 1.5rem;
 }
-
+/* Utseende för varje projektkort */
 .project-card {
     position: relative;
 
-    overflow: hidden;
+    overflow: hidden; /* Gör att innehåll inte sticker utanför rundade hörn */
 
     border-radius: var(--radius-medium);
 
@@ -729,7 +730,7 @@ strong {
 
     box-shadow: var(--shadow);
 }
-
+/* Projektets nummer */
 .project-number {
     padding: 1.2rem 1.4rem;
 
@@ -739,11 +740,11 @@ strong {
     font-weight: 700;
     line-height: 1;
 }
-
+/* Innehållet i projektboxen */
 .project-content {
     padding: 1.5rem;
 }
-
+/* Visar vilken typ av projekt det är */
 .project-category {
     margin-bottom: 0.5rem;
 
@@ -754,7 +755,7 @@ strong {
     text-transform: uppercase;
     letter-spacing: 0.1em;
 }
-
+/* Behållare för projektets länkar */
 .project-links {
     display: flex;
     flex-wrap: wrap;
@@ -762,7 +763,7 @@ strong {
 
     margin-top: 1.25rem;
 }
-
+/* Gör projektlänkarna till små knappar */
 .project-links a {
     display: inline-block;
 
@@ -779,7 +780,7 @@ strong {
         background-color 0.25s ease,
         color 0.25s ease;
 }
-
+/* Ändrar knappens färger vid hover och fokus */
 .project-links a:hover,
 .project-links a:focus-visible {
     background-color: var(--pink-dark);
@@ -790,13 +791,13 @@ strong {
 /* =========================
    17. GITHUB-SEKTION
    ========================= */
-
+/* Centrerar innehållet i GitHub-sektionen */
 .github-section {
     text-align: center;
 
     background-color: var(--white);
 }
-
+/* Begränsar bredden på innehållet */
 .github-section .section-container {
     max-width: 760px;
 }
@@ -805,16 +806,16 @@ strong {
 /* =========================
    18. KONTAKTSIDA
    ========================= */
-
+/* Vit bakgrund för kontaktdelen */
 .contact-section {
     background-color: var(--white);
 }
-
+/* Grid som håller kontaktinformation och formulär */
 .contact-layout {
     display: grid;
     gap: 2rem;
 }
-
+/* Gemensamt utseende för kontaktkort och formulär */
 .contact-information,
 .contact-form-wrapper {
     padding: 1.6rem;
@@ -823,43 +824,43 @@ strong {
 
     box-shadow: var(--shadow);
 }
-
+/* Rosa bakgrund på kontaktinformationen */
 .contact-information {
     background-color: var(--pink-light);
 }
-
+/* Vit bakgrund och kant runt formuläret */
 .contact-form-wrapper {
     background-color: var(--white);
 
     border: 1px solid var(--border);
 }
-
+/* Tar bort kursiv standardstil från address */
 address {
     font-style: normal;
 }
-
+/* Mellanrum mellan olika kontaktuppgifter */
 .contact-item {
     margin-bottom: 1.5rem;
 }
-
+/* Tar bort mellanrum efter sista kontaktuppgiften */
 .contact-item:last-child {
     margin-bottom: 0;
 }
-
+/* Mindre luft under underrubriken */
 .contact-item h3 {
     margin-bottom: 0.15rem;
 }
-
+/* Textfärg för kontaktuppgifter */
 .contact-item p,
 .contact-item a {
     color: var(--text);
 }
-
+/* Gör långa länkar enklare att visa på små skärmar */
 .contact-item a {
     word-break: break-word;
     font-weight: 600;
 }
-
+/* Ändrar färg när användaren håller över länken */
 .contact-item a:hover,
 .contact-item a:focus-visible {
     color: var(--pink-dark);
@@ -869,11 +870,11 @@ address {
 /* =========================
    19. FORMULÄR
    ========================= */
-
+/* Mellanrum mellan formulärets olika fält */
 .form-group {
     margin-bottom: 1.2rem;
 }
-
+/* Utseende på texten ovanför formulärfälten */
 .form-group label {
     display: block;
 
@@ -882,7 +883,7 @@ address {
     font-size: 0.95rem;
     font-weight: 700;
 }
-
+/* Grundutseende för input och textarea */
 .form-group input,
 .form-group textarea {
     width: 100%;
@@ -896,17 +897,17 @@ address {
 
     color: var(--text);
 
-    outline: none;
+    outline: none; /* Tar bort webbläsarens vanliga outline */
 
     transition:
         border-color 0.2s ease,
         box-shadow 0.2s ease;
 }
-
+/* Användaren kan ändra höjden på meddelanderutan */
 .form-group textarea {
     resize: vertical;
 }
-
+/* Markerar vilket formulärfält användaren skriver i */
 .form-group input:focus,
 .form-group textarea:focus {
     border-color: var(--pink-dark);
@@ -914,7 +915,7 @@ address {
     box-shadow:
         0 0 0 4px rgba(201, 31, 125, 0.12);
 }
-
+/* Meddelande som visas vid formuläret */
 .form-message {
     margin-top: 1rem;
 
@@ -926,7 +927,7 @@ address {
 /* =========================
    20. KONTAKT CTA
    ========================= */
-
+/* CTA betyder Call To Action och uppmanar användaren att göra något */
 .contact-cta {
     text-align: center;
 
@@ -939,7 +940,7 @@ address {
         ),
         var(--pink-light);
 }
-
+/* Begränsar bredden på innehållet */
 .contact-cta .section-container {
     max-width: 760px;
 }
@@ -948,35 +949,35 @@ address {
 /* =========================
    21. FOOTER
    ========================= */
-
+/* Sidans nedersta del */
 .site-footer {
     padding: 2rem 1.25rem;
 
     background-color: var(--black);
     color: var(--white);
 }
-
+/* På mobil placeras innehållet under varandra */
 .footer-container {
     display: flex;
     flex-direction: column;
     gap: 1rem;
 }
-
+/* Vit text i sidfoten */
 .site-footer p {
     margin: 0;
     color: var(--white);
 }
-
+/* Placerar navigationslänkarna bredvid varandra */
 .site-footer nav {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
 }
-
+/* Vita länkar i sidfoten */
 .site-footer a {
     color: var(--white);
 }
-
+/* Rosa färg när länken får fokus eller hover */
 .site-footer a:hover,
 .site-footer a:focus-visible {
     color: var(--pink-soft);
@@ -986,7 +987,7 @@ address {
 /* =========================
    22. TILLGÄNGLIGHET
    ========================= */
-
+/* Visar tydligt vilket element som är markerat med tangentbordet */
 a:focus-visible,
 button:focus-visible {
     outline: 3px solid var(--pink-dark);
@@ -999,26 +1000,26 @@ button:focus-visible {
    ========================================================= */
 
 @media (min-width: 700px) {
-
+/* Mer luft runt sektionerna på större skärmar */
     .section {
         padding:
             5.5rem
             2rem;
     }
-
+/* Mer utrymme på sidorna av headern */
     .header-container {
         padding:
             0
             2rem;
     }
-
+/* Större avstånd i hero-sektionen */
     .hero {
         padding:
             3.5rem
             2rem
             5.5rem;
     }
-
+/* Mer luft i hero på undersidor */
     .page-hero {
         padding:
             5rem
@@ -1027,7 +1028,7 @@ button:focus-visible {
 
 
     /* UTBILDNING */
-
+/* Visar utbildningskorten i två kolumner */
     .education-list {
         grid-template-columns:
             repeat(2, 1fr);
@@ -1035,12 +1036,12 @@ button:focus-visible {
 
 
     /* PROJEKT */
-
+/* Visar projekt i två kolumner */
     .projects-grid {
         grid-template-columns:
             repeat(2, 1fr);
     }
-
+/* Det tredje projektet tar hela bredden */
     .project-card:nth-child(3) {
         grid-column:
             1 / -1;
@@ -1048,7 +1049,7 @@ button:focus-visible {
 
 
     /* KONTAKT */
-
+/* Mer luft inuti kontaktkorten */
     .contact-information,
     .contact-form-wrapper {
         padding: 2rem;
@@ -1056,7 +1057,7 @@ button:focus-visible {
 
 
     /* FOOTER */
-
+/* På tablet visas innehållet bredvid varandra */
     .footer-container {
         flex-direction: row;
         align-items: center;
@@ -1072,19 +1073,19 @@ button:focus-visible {
 @media (min-width: 950px) {
 
     /* HEADER */
-
+/* Headern fortsätter vara synlig vid scrollning */
     .site-header {
         position: sticky;
     }
-
+/* Gör headern lite högre */
     .header-container {
         min-height: 82px;
     }
-
+/* Hamburgermenyn behövs inte på desktop */
     .menu-button {
         display: none;
     }
-
+/* Navigationen visas alltid på desktop */
     .main-navigation {
         position: static;
 
@@ -1096,7 +1097,7 @@ button:focus-visible {
         background-color: transparent;
         box-shadow: none;
     }
-
+/* Menylänkarna placeras bredvid varandra */
     .main-navigation ul {
         display: flex;
         align-items: center;
@@ -1104,11 +1105,11 @@ button:focus-visible {
 
         padding: 0;
     }
-
+/* Tar bort avståndet som användes i mobilmenyn */
     .main-navigation li + li {
         margin-top: 0;
     }
-
+/* Justerar storleken på länkarna */
     .main-navigation a {
         padding:
             0.65rem
@@ -1117,10 +1118,10 @@ button:focus-visible {
 
 
     /* HERO */
-
+/* Hero fyller nästan hela skärmens höjd */
     .hero {
         min-height: calc(100vh - 82px);
-
+/* Bild och text visas i två kolumner */
         grid-template-columns:
             minmax(360px, 0.9fr)
             minmax(420px, 1.1fr);
@@ -1133,19 +1134,19 @@ button:focus-visible {
             5rem
             max(2rem, calc((100vw - var(--max-width)) / 2));
     }
-
+/* Bildbehållaren använder hela sin kolumn */
     .hero-image-wrapper {
         width: 100%;
     }
-
+/* Anpassar bildens proportioner för desktop */
     .hero-image {
         aspect-ratio: 0.84;
     }
-
+/* Begränsar bredden på textinnehållet */
     .hero-content {
         max-width: 630px;
     }
-
+/* Gör huvudrubriken större på desktop */
     .hero-content h1 {
         font-size:
             clamp(
@@ -1156,14 +1157,14 @@ button:focus-visible {
 
         margin-bottom: 3rem;
     }
-
+/* Gör underrubriken större */
     .hero-content h2 {
         font-size: 3rem;
     }
 
 
     /* ERFARENHET */
-
+/* Begränsar bredden och ger mer luft i kortet */
     .experience-card {
         max-width: 850px;
 
@@ -1172,7 +1173,7 @@ button:focus-visible {
 
 
     /* FAKTA */
-
+/* Delar upp sektionen i två kolumner */
     .facts-section .section-container {
         display: grid;
 
@@ -1184,26 +1185,26 @@ button:focus-visible {
 
         align-items: start;
     }
-
+/* Begränsar rubrikens bredd */
     .facts-section h2 {
         max-width: 350px;
     }
 
 
     /* PROJEKT */
-
+/* Visar projekten i tre kolumner */
     .projects-grid {
         grid-template-columns:
             repeat(3, 1fr);
     }
-
+/* Det tredje kortet behöver inte längre ta hela raden */
     .project-card:nth-child(3) {
         grid-column: auto;
     }
 
 
     /* KONTAKT */
-
+/* Delar upp kontaktinformation och formulär i två kolumner */
     .contact-layout {
         grid-template-columns:
             0.85fr
@@ -1213,7 +1214,7 @@ button:focus-visible {
 
         gap: 3rem;
     }
-
+/* Mer luft inne i kontaktkorten */
     .contact-information,
     .contact-form-wrapper {
         padding: 2.5rem;
@@ -1226,20 +1227,20 @@ button:focus-visible {
    ========================================================= */
 
 @media (min-width: 1200px) {
-
+/* Ger större mellanrum ovanför och under sektionerna */
     .section {
         padding-top: 7rem;
         padding-bottom: 7rem;
     }
-
+/* Ökar avståndet mellan bild och text */
     .hero {
         gap: 6rem;
     }
-
+/* Ger mer utrymme inuti utbildningskorten */
     .education-card {
         padding: 2rem;
     }
-
+/* Ger mer utrymme inuti projektkorten */
     .project-content {
         padding: 2rem;
     }
@@ -1252,7 +1253,7 @@ button:focus-visible {
    ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
-
+/* Stänger nästan helt av animationer och mjuka övergångar */
     *,
     *::before,
     *::after {
