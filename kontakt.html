@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="sv">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,11 +19,14 @@
 <body>
 
     <header class="site-header">
+
         <div class="header-container">
 
-            <a href="index.html" class="logo">
-                Fredrica Claesson
-            </a>
+            <h1 class="logo">
+                <a href="index.html">
+                    Fredrica Claesson
+                </a>
+            </h1>
 
             <button
                 class="menu-button"
@@ -36,12 +40,16 @@
                 <span></span>
             </button>
 
-            <nav id="main-navigation" class="main-navigation" aria-label="Huvudmeny">
+            <nav
+                id="main-navigation"
+                class="main-navigation"
+                aria-label="Huvudmeny"
+            >
                 <ul>
 
                     <li>
                         <a href="index.html">
-                            Startsida
+                            CV
                         </a>
                     </li>
 
@@ -61,6 +69,7 @@
             </nav>
 
         </div>
+
     </header>
 
 
@@ -75,7 +84,7 @@
                     Hör gärna av dig
                 </p>
 
-                <h1>Kontakt</h1>
+                <h2>Kontakt</h2>
 
                 <p>
                     Jag träffas gärna för att berätta mer om mig själv
@@ -88,8 +97,11 @@
         </section>
 
 
-        <!-- KONTAKTUPPGIFTER -->
-        <section id="kontakt" class="section contact-section">
+        <!-- KONTAKT -->
+        <section
+            id="kontakt"
+            class="section contact-section"
+        >
 
             <div class="section-container contact-layout">
 
@@ -98,7 +110,6 @@
                     <h2>
                         Mina kontaktuppgifter
                     </h2>
-
 
                     <address>
 
@@ -142,9 +153,9 @@
                             <a
                                 href="https://github.com/FredrikaClaesson"
                                 target="_blank"
-                                rel="noopener"
+                                rel="noopener noreferrer"
                             >
-                                github.com/fredricaclaesson
+                                github.com/FredrikaClaesson
                             </a>
 
                         </div>
@@ -155,18 +166,19 @@
 
 
                 <!-- KONTAKTFORMULÄR -->
-                <div class="contact-form-wrapper">
+                <section class="contact-form-wrapper">
 
                     <h2>
                         Skicka ett meddelande
                     </h2>
 
                     <p>
-                        Funderar du på något? Skicka ett meddelande till 
-                        mig så återkopplar jag inom 24h. Vi hörs! 
-                        <span class="ur-funktion">UR FUNKTION!</span>
+                        Funderar du på något? Skicka ett meddelande till
+                        mig så återkopplar jag inom 24h. Vi hörs!
+                        <strong class="ur-funktion">
+                            UR FUNKTION!
+                        </strong>
                     </p>
-
 
                     <form id="contact-form">
 
@@ -236,7 +248,10 @@
                         </div>
 
 
-                        <button type="submit" class="button">
+                        <button
+                            type="submit"
+                            class="button"
+                        >
                             Skicka meddelande
                         </button>
 
@@ -248,7 +263,7 @@
 
                     </form>
 
-                </div>
+                </section>
 
             </div>
 
@@ -271,8 +286,10 @@
                 </p>
 
                 <a
-                    href="#kontakt" class="button">
-                    Mejla mig
+                    href="#kontakt"
+                    class="button"
+                >
+                    Kontakta mig
                 </a>
 
             </div>
@@ -301,4 +318,5 @@
     </footer>
 
 </body>
+
 </html>
