@@ -4,15 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kontaktuppgifter till Fredrica Claesson, webbutvecklingsstudent." >
-    <title>Kontakt | Fredrica Claesson</title>
+    <meta name="description" content="Fredrica Claesson | Portfolio">
+
+    <title>Fredrica Claesson | Portfolio</title>
+
     <link rel="stylesheet" href="cv.css">
     <script src="cv.js" defer></script>
 </head>
 
-    
 <body>
+
     <header class="site-header">
+
         <div class="header-container">
 
             <h1 class="logo">
@@ -21,7 +24,6 @@
                 </a>
             </h1>
 
-            
             <button
                 class="menu-button"
                 type="button"
@@ -34,13 +36,13 @@
                 <span></span>
             </button>
 
-            
             <nav
                 id="main-navigation"
                 class="main-navigation"
                 aria-label="Huvudmeny"
             >
                 <ul>
+
                     <li>
                         <a href="index.html">
                             CV
@@ -48,212 +50,271 @@
                     </li>
 
                     <li>
-                        <a href="portfolio.html">
+                        <a href="portfolio.html" aria-current="page">
                             Portfolio
                         </a>
                     </li>
 
                     <li>
-                        <a href="kontakt.html" aria-current="page">
+                        <a href="kontakt.html">
                             Kontakt
                         </a>
                     </li>
+
                 </ul>
             </nav>
+
         </div>
+
     </header>
 
 
     <main>
+
         <!-- SIDINTRO -->
         <section class="page-hero">
+
             <div class="section-container">
+
                 <p class="section-label">
-                    Hör gärna av dig
+                    Kika närmare på min...
                 </p>
 
-                <h2>Kontakt</h2>
+                <h2>Portfolio</h2>
 
                 <p>
-                    Jag träffas gärna för att berätta mer om mig själv
-                    och visa varför just jag skulle passa perfekt
-                    in i ert team!
+                    Här samlar jag projekt och övningar från min utbildning.
+                    Portfolion kommer att utvecklas och fyllas på i takt
+                    med att jag lär mig fler tekniker inom webbutveckling.
                 </p>
+
             </div>
+
         </section>
 
 
-        <!-- KONTAKT -->
-        <section
-            id="kontakt"
-            class="section contact-section"
-        >
-            <div class="section-container contact-layout">
-                <div class="contact-information">
+        <!-- KUNSKAPER -->
+        <section class="section skills-section">
 
-                    <h2>
-                        Mina kontaktuppgifter
-                    </h2>
-
-                    
-                    <address>
-                        <div class="contact-item">
-                            <h3>Telefon</h3>
-
-                            <a href="tel:+46761254153">
-                                076-125 41 53
-                            </a>
-                        </div>
-
-
-                        <div class="contact-item">
-                            <h3>E-post</h3>
-
-                            <a href="mailto:fredrica.claesson@gmail.com">
-                                fredrica.claesson@gmail.com
-                            </a>
-                        </div>
-
-
-                        <div class="contact-item">
-                            <h3>Ort</h3>
-
-                            <p>
-                                Gislaved, Sverige
-                            </p>
-                        </div>
-
-                        
-                        <div class="contact-item">
-                            <h3>GitHub</h3>
-
-                            <a
-                                href="https://github.com/FredrikaClaesson"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                            >
-                                github.com/FredrikaClaesson
-                            </a>
-                        </div>
-                    </address>
-                </div>
-
-
-                <!-- KONTAKTFORMULÄR -->
-                <section class="contact-form-wrapper">
-                    <h2>
-                        Skicka ett meddelande
-                    </h2>
-
-                    <p>
-                        Funderar du på något? Skicka ett meddelande till
-                        mig så återkopplar jag inom 24h. Vi hörs!
-                        <strong class="ur-funktion">
-                            UR FUNKTION!
-                        </strong>
-                    </p>
-
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <label for="name">
-                                Namn
-                            </label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                autocomplete="name"
-                                required
-                            >
-                        </div>
-
-
-                        <div class="form-group">
-                            <label for="email">
-                                E-post
-                            </label>
-
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                autocomplete="email"
-                                required
-                            >
-                        </div>
-
-                        <div class="form-group">
-                            <label for="subject">
-                                Ämne
-                            </label>
-
-                            <input
-                                type="text"
-                                id="subject"
-                                name="subject"
-                                required
-                            >
-
-                        </div>
-
-                        <div class="form-group">
-                            <label for="message">
-                                Meddelande
-                            </label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                rows="6"
-                                required
-                            ></textarea>
-                        </div>
-
-                        <button
-                            type="submit"
-                            class="button"
-                        >
-                            Skicka meddelande
-                        </button>
-
-                        <p
-                            id="form-message"
-                            class="form-message"
-                            aria-live="polite"
-                        ></p>
-
-                    </form>
-                </section>
-            </div>
-        </section>
-
-
-        <!-- AVSLUTNING -->
-        <section class="section contact-cta">
             <div class="section-container">
 
+                <h2>Mina kunskaper</h2>
+
+                <ul class="skills-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Git</li>
+                    <li>GitHub</li>
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROJEKT -->
+        <section class="section projects-section">
+
+            <div class="section-container">
+
+                <header class="section-heading">
+
+                    <p class="section-label">
+                        Kika närmare på...
+                    </p>
+
+                    <h2>Mina projekt</h2>
+
+                </header>
+
+
+                <div class="projects-grid">
+
+                    <!-- PROJEKT 1 -->
+                    <article class="project-card">
+
+                        <p
+                            class="project-number"
+                            aria-hidden="true"
+                        >
+                            01
+                        </p>
+
+                        <div class="project-content">
+
+                            <p class="project-category">
+                                HTML &amp; CSS
+                            </p>
+
+                            <h3>
+                                Projekt 1 – Responsivitet
+                            </h3>
+
+                            <p>
+                                Uppgiften gick ut på att skapa responsiva former
+                                och fält med HTML och CSS som anpassar sig efter
+                                olika skärmstorlekar. Jag använde mig av HTML för
+                                att skapa strukturen på sidan och CSS för att
+                                styra storlek, positionering och centrering samt
+                                relativa mått som procent för att göra sidan responsiv.
+                            </p>
+
+                            <div class="project-links">
+
+                                <a
+                                    href="https://fredrikaclaesson.github.io/Responsivitet/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Visa projekt
+                                </a>
+
+                                <a
+                                    href="https://github.com/FredrikaClaesson/Responsivitet"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    GitHub
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PROJEKT 2 -->
+                    <article class="project-card">
+
+                        <p
+                            class="project-number"
+                            aria-hidden="true"
+                        >
+                            02
+                        </p>
+
+                        <div class="project-content">
+
+                            <p class="project-category">
+                                HTML, CSS &amp; JavaScript
+                            </p>
+
+                            <h3>
+                                Projekt 2 – Portfolio &amp; CV
+                            </h3>
+
+                            <p>
+                                I denna uppgiften har jag fått skapa ett personligt
+                                CV och en portfolio som en webbsida. Jag har fått
+                                göra min egna planering och skiss för hur jag ville
+                                att den skulle se ut. Sedan byggde jag sidan med
+                                HTML, CSS och JavaScript. Jag gjorde den responsiv
+                                med Mobile First, Flexbox och Grid. Jag har även
+                                fått använda Git och GitHub för att spara min kod
+                                och GitHub Pages för att publicera webbsidan. Till
+                                sist fick jag reflektera över resultatet och jämföra
+                                den färdiga sidan med min ursprungliga planering.
+                            </p>
+
+                            <div class="project-links">
+
+                                <a
+                                    href="https://fredrikaclaesson.github.io/CV-Portfolio/portfolio.html"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    Visa projekt
+                                </a>
+
+                                <a
+                                    href="https://github.com/FredrikaClaesson/CV-Portfolio"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    GitHub
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PROJEKT 3 -->
+                    <article class="project-card">
+
+                        <p
+                            class="project-number"
+                            aria-hidden="true"
+                        >
+                            03
+                        </p>
+
+                        <div class="project-content">
+
+                            <p class="project-category">
+                                Kommande
+                            </p>
+
+                            <h3>
+                                Kommande projekt
+                            </h3>
+
+                            <p>
+                                Här kommer framtida projekt att ta plats!
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- GITHUB -->
+        <section class="section github-section">
+
+            <div class="section-container">
+
+                <p class="section-label">
+                    Min kod
+                </p>
+
                 <h2>
-                    Ska vi skapa något tillsammans?
+                    Följ mina projekt på GitHub
                 </h2>
 
                 <p>
-                    Jag är nyfiken, kreativ och motiverad till att fortsätta
-                    utvecklas inom webbutveckling. Hör gärna av dig om
-                    du vill veta mer om mig och mina projekt.
+                    På min GitHub-profil publicerar jag kod
+                    och projekt som jag arbetar med under
+                    min utbildning.
                 </p>
 
                 <a
-                    href="#kontakt"
+                    href="https://github.com/FredrikaClaesson"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     class="button"
                 >
-                    Kontakta mig
+                    Besök min GitHub
                 </a>
 
             </div>
+
         </section>
+
     </main>
 
 
     <footer class="site-footer">
+
         <div class="footer-container">
 
             <p>
@@ -265,7 +326,11 @@
                 <a href="portfolio.html">Portfolio</a>
                 <a href="kontakt.html">Kontakt</a>
             </nav>
+
         </div>
+
     </footer>
+
 </body>
+
 </html>
